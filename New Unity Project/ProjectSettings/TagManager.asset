@@ -8,6 +8,8 @@ TagManager:
   - Ogre
   - Wizard
   - Staff
+  - Enemy
+  - StaffAttack
   layers:
   - Default
   - TransparentFX
