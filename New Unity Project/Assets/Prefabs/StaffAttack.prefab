@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1608435187430014838}
   m_Layer: 0
   m_Name: StaffAttack
-  m_TagString: Untagged
+  m_TagString: StaffAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8379449397031207629}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -126,3 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbSpeed: 10
+  staffProjectile: {fileID: 8379449397031207629}
+  spawnPoint: {fileID: 0}

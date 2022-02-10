@@ -9,6 +9,7 @@ TagManager:
   - Wizard
   - Staff
   - Enemy
+  - StaffAttack
   layers:
   - Default
   - TransparentFX

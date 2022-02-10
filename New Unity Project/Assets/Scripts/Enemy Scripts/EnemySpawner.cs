@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : SingletonPattern<EnemySpawner>
 {
-    [SerializeField] private GameObject enemy_Ogre, enemy_Wizard;
+    [SerializeField] private GameObject enemy;
     private GameObject enemyClone;
     
     [SerializeField] private List<Transform> spawnPoints;
@@ -31,16 +31,10 @@ public class EnemySpawner : SingletonPattern<EnemySpawner>
         if (timeSinceSpawn > timeBetweenSpawns && spawnCounter <= enemiesThisWave)
         {
             randomSpawn = Random.Range(0, spawnPoints.Count);
-            randomEnemy = Random.Range(1, 4);
 
-            if (randomEnemy % 2 == 1)
-            {
-                enemyClone = Instantiate(enemy_Ogre, spawnPoints[randomSpawn].position, spawnPoints[randomSpawn].rotation);
-            }
-            else
-            {
-                enemyClone = Instantiate(enemy_Wizard, spawnPoints[randomSpawn].position, spawnPoints[randomSpawn].rotation);
-            }
+            
+            enemyClone = Instantiate(enemy, spawnPoints[randomSpawn].position, spawnPoints[randomSpawn].rotation);
+            
 
             timeSinceSpawn = 0;
             spawnCounter++;
