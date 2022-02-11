@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : SingletonPattern<PlayerMovement>
 {
     public CharacterController controller;
     public float speed = 10f;
@@ -14,15 +14,9 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     
     Vector3 velocity;
-    bool isGrounded;
+    [SerializeField] public bool isGrounded;
 
     void FixedUpdate()
-    {
-        Movement();
-
-    }
-
-    void Movement()
     {
         //Checks if player is on the ground
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -49,5 +43,7 @@ public class PlayerMovement : MonoBehaviour
         //Applies gravity to player
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
     }
+
 }

@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
         if(other.CompareTag("StaffAttack"))
         {
             GameManager.Instance.score += 10;
+
+            if (Random.Range(0, 4) == 3)
+                Instantiate(ingredients[Random.Range(0, ingredients.Count)], transform.position, transform.rotation);            
         }
 
         else if (other.CompareTag("Wizard"))
@@ -37,15 +40,5 @@ public class Enemy : MonoBehaviour
         }
 
         Destroy(this.gameObject);
-    }
-
-    //Chance of item dropped
-    //Drops when enemy is Destroyed
-    private void OnDestroy()
-    {
-        if (Random.Range(0, 4) == 3)
-        {
-            Instantiate(ingredients[Random.Range(0, ingredients.Count)], transform.position, transform.rotation);
-        }
     }
 }

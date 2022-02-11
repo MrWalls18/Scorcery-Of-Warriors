@@ -10,6 +10,8 @@ TagManager:
   - Staff
   - Enemy
   - StaffAttack
+  - Obstacle
+  - Barrel
   layers:
   - Default
   - TransparentFX
